@@ -1,0 +1,11 @@
+<form method="POST" action="/delete/{{ list_name }}">
+	{{ form.hidden_tag() }}
+	{{form.deleteItem.label }} {{ form.deleteItem() }}
+	{{ form.submit() }}
+</form>
+
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
