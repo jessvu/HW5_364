@@ -160,7 +160,7 @@ def update(item):
         p = TodoItem.query.filter_by(description=item).first()
         p.priority = priority_update
         db.session.commit()
-        flash("Updated priority of " + item)
+        flash("UPDATED PRIORITY OF" + item)
         return redirect(url_for('all_lists'))
     return render_template('update_item.html', item_name = item, form = form)
     # pass # Replace with code
@@ -180,7 +180,7 @@ def delete(lst):
         d = TodoList.query.filter_by(title=lst).first()    
         db.session.delete(d)
         db.session.commit()
-        flash(lst + " was deleted.")
+        flash(lst + " SUCCESSFULLY DELETED.")
         return redirect(url_for('all_lists'))
     return render_template('delete_item.html', list_name = lst, form = form)
 
